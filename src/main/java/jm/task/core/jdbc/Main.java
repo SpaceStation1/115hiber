@@ -9,8 +9,8 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) throws SQLException,ClassNotFoundException{
-        Util.getMySQLConnection();
-        System.out.println("connected");
+
+
         UserService userService = new UserServiceImpl();
         userService.createUsersTable();
         userService.saveUser("Ivan1","Ivanov1",(byte)5);
@@ -18,6 +18,7 @@ public class Main {
         userService.saveUser("Ivan3","Ivanov3",(byte)5);
         userService.saveUser("Ivan4","Ivanov4",(byte)5);
         userService.getAllUsers();
+        userService.removeUserById(2);
         userService.cleanUsersTable();
         userService.dropUsersTable();
 
